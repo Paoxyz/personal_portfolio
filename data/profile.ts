@@ -10,6 +10,7 @@ export const profile = {
     "Motivated and detail-oriented developer with experience across full-stack web systems, database design, and applied machine learning. Comfortable owning a project from schema to deployment, and from solo builds to shared GitHub repositories with a team.",
   resumeFile: "/resume/Paolo_Garcia_Resume.pdf",
   photo: "/images/profile/paolo.jpg",
+  available: true,
   socials: {
     github: "",
     linkedin: "",

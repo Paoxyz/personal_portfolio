@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import LiquidGlassBackground from "@/components/effects/LiquidGlassBackground";
 import GlassCard from "@/components/ui/GlassCard";
 import Badge from "@/components/ui/Badge";
+import LiveFrame from "@/components/ui/LiveFrame";
 import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -30,20 +31,32 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           ))}
         </div>
 
-        {(project.liveUrl || project.repoUrl) && (
-          <div className="mt-6 flex flex-wrap gap-3">
-            {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-signal2">
-                View demo <ArrowUpRight size={16} />
-              </a>
-            )}
-            {project.repoUrl && (
-              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-mist/85 transition-colors hover:border-white/40">
-                <Github size={16} /> Source code
-              </a>
-            )}
-          </div>
-        )}
+        <div className="mt-8">
+          <LiveFrame url={project.liveUrl} title={project.title} />
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#111111] border border-white/10 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/25"
+            >
+              <Github size={16} /> Source
+            </a>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-signal2"
+            >
+              View Live <ArrowUpRight size={16} />
+            </a>
+          )}
+        </div>
 
         <GlassCard className="mt-10">
           <p className="text-sm text-mist/50">What it does</p>

@@ -6,6 +6,7 @@ export interface Project {
   summary: string;
   highlights: string[];
   stack: string[];
+  category: string;
   image: string;
   repoUrl?: string;
   liveUrl?: string;
