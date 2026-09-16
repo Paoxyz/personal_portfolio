@@ -1,0 +1,60 @@
+import Link from "next/link";
+import { ArrowUpRight, Github } from "lucide-react";
+import GlassCard from "@/components/ui/GlassCard";
+import BentoGrid from "@/components/ui/BentoGrid";
+import Badge from "@/components/ui/Badge";
+import { projects } from "@/data/projects";
+
+export default function ProjectsGrid() {
+  return (
+    <section id="work" className="mx-auto mt-24 w-[92%] max-w-5xl scroll-mt-24">
+      <h2 className="font-display text-3xl font-semibold tracking-tight">Selected work</h2>
+      <p className="mt-2 max-w-lg text-mist/60">
+        Five systems, five different problems — document workflows, prediction, scheduling, grading, and finance.
+      </p>
+
+      <BentoGrid className="mt-8">
+        {projects.map((project, i) => {
+          const span = i === 0 ? "md:col-span-4" : i === 1 ? "md:col-span-2" : "md:col-span-3";
+          return (
+            <GlassCard key={project.slug} className={`h-full transition-transform hover:-translate-y-1 ${span}`}>
+              <p className="text-xs text-mist/45">{project.period}</p>
+
+              <Link href={`/projects/${project.slug}`}>
+                <h3 className="mt-2 font-display text-xl font-semibold transition-colors hover:text-signal">
+                  {project.title}
+                </h3>
+              </Link>
+
+              <p className="mt-3 text-sm text-mist/65">{project.summary}</p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.stack.slice(0, 4).map((tech) => (
+                  <Badge key={tech}>{tech}</Badge>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-signal2">
+                    View demo <ArrowUpRight size={14} />
+                  </a>
+                )}
+                {project.repoUrl && (
+                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-1.5 text-sm font-medium text-mist/85 transition-colors hover:border-white/40">
+                    <Github size={14} /> Source code
+                  </a>
+                )}
+                {!project.liveUrl && !project.repoUrl && (
+                  <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-1.5 text-sm font-medium text-mist/85 transition-colors hover:border-white/40">
+                    View details <ArrowUpRight size={14} />
+                  </Link>
+                )}
+              </div>
+            </GlassCard>
+          );
+        })}
+      </BentoGrid>
+    </section>
+  );
+}
