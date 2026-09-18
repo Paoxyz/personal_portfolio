@@ -51,6 +51,7 @@ export const projects: Project[] = [
     ],
     stack: ["Full-Stack", "PDF Generation", "Search & Filtering"],
     category: "Full-Stack",
+    liveUrl: "https://preview-gz9jmltdj-paoxyzs-projects.vercel.app/",
     image: "/images/projects/event-calendar/cover.jpg",
     featured: true,
   },
