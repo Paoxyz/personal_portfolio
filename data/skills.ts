@@ -9,6 +9,7 @@ export const technicalSkills = [
   "Node.js",
   "Django",
   "MySQL",
+  "C++"
 ];
 
 export const softSkills = [

@@ -44,56 +44,89 @@ export default function ProjectsGrid() {
       <BentoGrid className="mt-8">
         {filtered.map((project, i) => {
           const span = i % 3 === 0 ? "md:col-span-4" : i % 3 === 1 ? "md:col-span-2" : "md:col-span-3";
+
           return (
-            <GlassCard key={project.slug} className={`h-full transition-transform hover:-translate-y-1 ${span}`}>
-              <div className="flex items-center justify-between">
-                <p className="text-xs text-mist/45">{project.period}</p>
-                <Badge>{project.category}</Badge>
+            <GlassCard
+              key={project.slug}
+              padded={false}
+              className={`h-full overflow-hidden transition-transform hover:-translate-y-1 ${span}`}
+            >
+              {/* Live preview strip — always rendered, no hover needed */}
+              <div className="relative h-64 w-full overflow-hidden border-b border-white/10 bg-[#0d0d0d]">
+                {project.liveUrl ? (
+                  <div className="absolute inset-0" style={{ overflow: "hidden" }}>
+                    <iframe
+                      src={project.liveUrl}
+                      title={`Live preview of ${project.title}`}
+                      loading="lazy"
+                      tabIndex={-1}
+                      style={{
+                        width: "180%",
+                        height: "180%",
+                        transform: "scale(0.5556)",
+                        transformOrigin: "top left",
+                        border: "none",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-xs text-mist/30">
+                    No live preview yet
+                  </div>
+                )}
               </div>
 
-              <Link href={`/projects/${project.slug}`}>
-                <h3 className="mt-2 font-display text-xl font-semibold transition-colors hover:text-signal">
-                  {project.title}
-                </h3>
-              </Link>
+              <div className="p-6">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs text-mist/45">{project.period}</p>
+                  <Badge>{project.category}</Badge>
+                </div>
 
-              <p className="mt-3 text-sm text-mist/65">{project.summary}</p>
+                <Link href={`/projects/${project.slug}`}>
+                  <h3 className="mt-2 font-display text-xl font-semibold transition-colors hover:text-signal">
+                    {project.title}
+                  </h3>
+                </Link>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.stack.slice(0, 4).map((tech) => (
-                  <Badge key={tech}>{tech}</Badge>
-                ))}
-              </div>
+                <p className="mt-3 text-sm text-mist/65">{project.summary}</p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                {project.repoUrl && (
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[#111111] border border-white/10 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:border-white/25"
-                  >
-                    <Github size={14} /> Source
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-signal2"
-                  >
-                    View Live <ArrowUpRight size={14} />
-                  </a>
-                )}
-                {!project.liveUrl && !project.repoUrl && (
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-1.5 text-sm font-medium text-mist/85 transition-colors hover:border-white/40"
-                  >
-                    View details <ArrowUpRight size={14} />
-                  </Link>
-                )}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.slice(0, 4).map((tech) => (
+                    <Badge key={tech}>{tech}</Badge>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.repoUrl && (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-[#111111] border border-white/10 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:border-white/25"
+                    >
+                      <Github size={14} /> Source
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-signal2"
+                    >
+                      View Live <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                  {!project.liveUrl && !project.repoUrl && (
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-1.5 text-sm font-medium text-mist/85 transition-colors hover:border-white/40"
+                    >
+                      View details <ArrowUpRight size={14} />
+                    </Link>
+                  )}
+                </div>
               </div>
             </GlassCard>
           );

@@ -51,8 +51,8 @@ export const projects: Project[] = [
     ],
     stack: ["Full-Stack", "PDF Generation", "Search & Filtering"],
     category: "Full-Stack",
-    liveUrl: "https://preview-gz9jmltdj-paoxyzs-projects.vercel.app/",
     image: "/images/projects/event-calendar/cover.jpg",
+    liveUrl: "https://calendar-preview.vercel.app/",
     featured: true,
   },
   {
@@ -85,5 +85,22 @@ export const projects: Project[] = [
     stack: ["Database Design", "Secure Access"],
     category: "Full-Stack",
     image: "/images/projects/loan-tracker/cover.jpg",
+  },
+  {
+    slug: "marine-life-explorer",
+    title: "Marine Life Explorer",
+    role: "Frontend Developer",
+    period: "2026",
+    summary:
+      "An interactive front-end archive of ocean creatures, with a full-screen video hero and a hover-driven explore section.",
+    highlights: [
+      "Full-screen looping video background as the landing hero",
+      "Hover-interactive cards for browsing marine species in the archive",
+      "Smooth scroll navigation between the hero and the explore section",
+    ],
+    stack: ["HTML", "CSS", "JavaScript"],
+    category: "Frontend",
+    image: "/images/projects/marine-life-explorer/cover.jpg",
+    liveUrl: "https://marinelifewebsite.vercel.app/",
   },
 ];
