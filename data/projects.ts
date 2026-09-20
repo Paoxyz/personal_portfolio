@@ -17,6 +17,8 @@ export const projects: Project[] = [
     stack: ["Node.js", "Express.js", "React", "MySQL", "Tailwind CSS"],
     category: "Full-Stack",
     image: "/images/projects/edts/cover.jpg",
+    repoUrl: "https://github.com/JohanBuenaventura/dts-system",
+    liveUrl: "https://edts-demo.vercel.app/",
     featured: true,
   },
   {
@@ -34,6 +36,8 @@ export const projects: Project[] = [
     stack: ["Python", "Django", "SQLite", "scikit-learn", "pandas"],
     category: "Python / ML",
     image: "/images/projects/pokemon-predictor/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/REPLACE_ME_pokemon-predictor",
+    liveUrl: "https://demoforpredictor.vercel.app/",
     featured: true,
   },
   {
@@ -52,6 +56,7 @@ export const projects: Project[] = [
     stack: ["Full-Stack", "PDF Generation", "Search & Filtering"],
     category: "Full-Stack",
     image: "/images/projects/event-calendar/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/REPLACE_ME_digital-event-calendar-system",
     liveUrl: "https://calendar-preview.vercel.app/",
     featured: true,
   },
@@ -70,6 +75,8 @@ export const projects: Project[] = [
     stack: ["PHP", "MySQL"],
     category: "PHP",
     image: "/images/projects/ols/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/OLS",
+    liveUrl: "https://demo-ols.vercel.app/",
   },
   {
     slug: "administrative-loan-tracker",
@@ -85,6 +92,8 @@ export const projects: Project[] = [
     stack: ["Database Design", "Secure Access"],
     category: "Full-Stack",
     image: "/images/projects/loan-tracker/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/loan_tracker_application",
+    liveUrl: "https://demo-ols.vercel.app/"
   },
   {
     slug: "marine-life-explorer",
@@ -101,6 +110,7 @@ export const projects: Project[] = [
     stack: ["HTML", "CSS", "JavaScript"],
     category: "Frontend",
     image: "/images/projects/marine-life-explorer/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/marine_life_website",
     liveUrl: "https://marinelifewebsite.vercel.app/",
   },
 ];
