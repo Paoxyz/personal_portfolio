@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import GlassCard from "@/components/ui/GlassCard";
-import { profile } from "@/data/profile";
 
 export default function ContactSection() {
   const [name, setName] = useState("");
@@ -13,7 +12,7 @@ export default function ContactSection() {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio contact from ${name || "a visitor"}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:paobutdiff@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -61,7 +60,7 @@ export default function ContactSection() {
             Send message
           </button>
           <p className="text-xs text-mist/40">
-            This opens your email app with the message pre-filled — there&apos;s no backend on this site yet.
+            This opens your email app with the message pre-filled.
           </p>
         </form>
       </GlassCard>

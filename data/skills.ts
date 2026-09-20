@@ -9,7 +9,11 @@ export const technicalSkills = [
   "Node.js",
   "Django",
   "MySQL",
-  "C++"
+  "C++",
+  "Figma",
+  "Claude",
+  "Gemini",
+  "ChatGPT"
 ];
 
 export const softSkills = [

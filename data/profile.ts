@@ -8,12 +8,14 @@ export const profile = {
     "I build full-stack systems that manage real workflows — documents, schedules, grades, loans — end to end, from database design to the interface people use every day.",
   objective:
     "Motivated and detail-oriented developer with experience across full-stack web systems, database design, and applied machine learning. Comfortable owning a project from schema to deployment, and from solo builds to shared GitHub repositories with a team.",
-  resumeFile: "/resume/Paolo_Garcia_Resume.pdf",
+  resumeFile: "/PaoloGarciaResume.pdf", 
   photo: "/images/profile/paolo.jpg",
   available: true,
   socials: {
-    github: "",
-    linkedin: "",
+    github: "https://github.com/Paoxyz",
+    linkedin: "https://www.linkedin.com/in/paolo-garcia-878910365/", // Replace with your link
+    facebook: "https://www.facebook.com/paoetry/",    // Replace with your link
+    instagram: "https://www.instagram.com/pao.xzy",  // Replace with your link
   },
 };
 

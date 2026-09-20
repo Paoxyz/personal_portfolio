@@ -50,12 +50,15 @@ export default function Hero() {
         <motion.p variants={item} className="mt-6 max-w-md text-lg text-mist/70">
           {profile.summary}
         </motion.p>
+        
         <motion.div variants={item} className="mt-8 flex gap-3">
           <a
             href={profile.resumeFile}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
           >
-            Download resume
+            View resume
           </a>
           <a
             href="#contact"
@@ -63,6 +66,13 @@ export default function Hero() {
           >
             Get in touch
           </a>
+        </motion.div>
+
+        <motion.div variants={item} className="mt-6 flex items-center gap-4 text-sm text-mist/50">
+          <a href={profile.socials.github} target="_blank" rel="noopener noreferrer" className="hover:text-mist/90 transition-colors">GitHub</a>
+          <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-mist/90 transition-colors">LinkedIn</a>
+          <a href={profile.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-mist/90 transition-colors">Facebook</a>
+          <a href={profile.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-mist/90 transition-colors">Instagram</a>
         </motion.div>
       </div>
 

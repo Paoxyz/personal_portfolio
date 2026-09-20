@@ -10,7 +10,11 @@ const icons = [
   { name: "React", code: "react" },
   { name: "Node.js", code: "nodejs" },
   { name: "MySQL", code: "mysql" },
+  { name: "C++", code: "cpp" },
+  { name: "Figma", code: "figma" },
 ];
+
+const aiTools = ["Claude", "Gemini", "ChatGPT"];
 
 export default function SkillsSection() {
   return (
@@ -19,8 +23,8 @@ export default function SkillsSection() {
       <p className="mt-2 max-w-lg text-mist/60">Technologies I build with.</p>
 
       <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <GlassCard>
-          <div className="grid grid-cols-4 gap-4">
+        <GlassCard className="flex flex-col gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {icons.map((tech) => (
               <div key={tech.code} className="flex flex-col items-center gap-2">
                 <img
@@ -32,6 +36,17 @@ export default function SkillsSection() {
                 <span className="text-xs text-mist/60">{tech.name}</span>
               </div>
             ))}
+          </div>
+
+          <div className="border-t border-white/5 pt-4 text-center">
+            <p className="mb-3 text-xs text-mist/50">AI & Workflow Tools</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {aiTools.map((tool) => (
+                <span key={tool} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-mist/80">
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
         </GlassCard>
 
