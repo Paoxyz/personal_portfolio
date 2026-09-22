@@ -7,7 +7,7 @@ export const projects: Project[] = [
     role: "Full-Stack Developer",
     period: "June 2026 – July 2026",
     summary:
-      "A document tracking system for managing paperwork across multiple departments, with role-based access and full audit visibility.",
+      "A document tracking system for managing paperwork across multiple departments, with role-based access and full audit visibility. username: admin/password: password123 ",
     highlights: [
       "JWT authentication and role-based access control across departments",
       "Document CRUD, routing between departments, and file attachments",
@@ -91,8 +91,8 @@ export const projects: Project[] = [
     ],
     stack: ["Database Design", "Secure Access"],
     category: "Full-Stack",
-    image: "/images/projects/loan-tracker/cover.jpg",
-    repoUrl: "https://github.com/Paoxyz/loan_tracker_application",
+    image: "/images/projects/OLS/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/OLS",
     liveUrl: "https://demo-ols.vercel.app/"
   },
   {
@@ -112,5 +112,24 @@ export const projects: Project[] = [
     image: "/images/projects/marine-life-explorer/cover.jpg",
     repoUrl: "https://github.com/Paoxyz/marine_life_website",
     liveUrl: "https://marinelifewebsite.vercel.app/",
+  },
+
+  {
+    slug: "nomad-supply-co",
+    title: "Nomad Supply Co.",
+    role: "Frontend Developer",
+    period: "2026",
+    summary:
+      "A full front-end e-commerce storefront concept for an analog photography shop, with live search, filtering, and a working cart.",
+    highlights: [
+      "Live category, price, and keyword filtering across a 20+ item catalog",
+      "Persistent shopping cart with quantity controls, built with localStorage",
+      "Product detail modal and a mock checkout flow, all client-side",
+    ],
+    stack: ["HTML", "CSS", "JavaScript"],
+    category: "Frontend",
+    image: "/images/projects/nomad-supply-co/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/ECommerceWeb",
+    liveUrl: "https://ecommerceweb-demo-web.vercel.app/",
   },
 ];
