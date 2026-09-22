@@ -76,7 +76,7 @@ export const projects: Project[] = [
     category: "PHP",
     image: "/images/projects/ols/cover.jpg",
     repoUrl: "https://github.com/Paoxyz/OLS",
-    liveUrl: "https://demo-ols.vercel.app/",
+    liveUrl: "https://demoforteacherdashboard.vercel.app/",
   },
   {
     slug: "administrative-loan-tracker",
