@@ -132,4 +132,23 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Paoxyz/ECommerceWeb",
     liveUrl: "https://ecommerceweb-demo-web.vercel.app/",
   },
+
+  {
+    slug: "frm-studio",
+    title: "FRM Studio",
+    role: "Frontend Developer",
+    period: "2026",
+    summary:
+      "A minimalist black-and-white e-commerce storefront concept for a clothing brand, with live search, category filtering, and a full checkout flow.",
+    highlights: [
+      "Live search, category filters, and sorting across a multi-category product catalog",
+      "Slide-out cart with quantity controls and per-item size selection, built with React Context",
+      "Multi-step checkout — address, payment, and order confirmation — entirely client-side",
+    ],
+    stack: ["React", "Vite", "CSS"],
+    category: "Frontend",
+    image: "/images/projects/frm-studio/cover.jpg",
+    repoUrl: "https://github.com/Paoxyz/clothesweb",
+    liveUrl: "https://clothing-store-web-demo-three.vercel.app",
+  },
 ];
